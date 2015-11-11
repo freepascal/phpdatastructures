@@ -1,17 +1,6 @@
 <?php
 
-class Lang {
-	var $name;
-	var $more;
-	
-	function __construct($name, $more = '') {
-		$this->name = $name;
-	}
-	
-	function hashCode() {
-		return (string)($this->name. $this->more);
-	}
-}
+require_once('models/Lang.php');
 
 $java = new Lang('Java', 'I love it');
 $python = new Lang('Python');
@@ -23,6 +12,7 @@ $php = new Lang('PHP');
 
 $set = array();
 
+// dont use array_unique() for set
 $set[$java->hashCode()] = $java;
 $set[$python->hashCode()] = $python;
 $set[$_java->hashCode()] = $_java;
